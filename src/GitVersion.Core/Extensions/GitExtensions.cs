@@ -41,6 +41,6 @@ public static class GitExtensions
     public static string CreateGitLogArgs(int? maxCommits)
     {
         var commits = maxCommits != null ? $" -n {maxCommits}" : null;
-        return $@"log --graph --format=""%h %cr %d"" --decorate --date=relative --all --remotes=*{commits}";
+        return $@"log --graph --format=""%h %cr '%s' %d"" --decorate --date=relative --all --remotes=*{commits}";
     }
 }
